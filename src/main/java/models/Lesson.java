@@ -16,9 +16,10 @@ public class Lesson {
 
     }
 
-    public Lesson(String title, int roomNo){
+    public Lesson(String title, int roomNo, Course course){
         this.title = title;
         this.roomNo = roomNo;
+        this.course = course;
     }
 
     @Id
