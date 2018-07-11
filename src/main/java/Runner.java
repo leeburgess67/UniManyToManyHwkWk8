@@ -1,5 +1,7 @@
 import db.DBCourse;
 import db.DBHelper;
+import db.DBInstructor;
+import db.DBLesson;
 import models.*;
 
 import java.util.List;
@@ -22,7 +24,8 @@ public class Runner {
 
 
         List<Student> students = DBCourse.getStudentsFromCourse(course);
-
+        List<Lesson> lessons = DBInstructor.getLessonsFromInstructor(instructor);
+        List<Lesson> foundLessons = DBLesson.getLessonsFromStudent(student);
     }
 
 }
