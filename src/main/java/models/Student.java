@@ -18,12 +18,11 @@ public class Student {
 
     }
 
-    public Student(String name, int age, int enrollmentNo, Course course, Mentor mentor){
+    public Student(String name, int age, int enrollmentNo, Course course){
         this.name = name;
         this.age = age;
         this.enrollmentNo = enrollmentNo;
         this.course = course;
-        this.mentor = mentor;
     }
 
     @Id
@@ -75,8 +74,7 @@ public class Student {
         this.course = course;
     }
 
-    @OneToOne
-    @JoinColumn(name = "mentor_id", nullable = false)
+    @OneToOne(mappedBy = "student", fetch = FetchType.LAZY)
     public Mentor getMentor() {
         return mentor;
     }
