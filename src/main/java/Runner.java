@@ -1,8 +1,5 @@
 import db.DBHelper;
-import models.Course;
-import models.Lesson;
-import models.Mentor;
-import models.Student;
+import models.*;
 
 public class Runner {
 
@@ -10,7 +7,9 @@ public class Runner {
 
         Course course = new Course("java", "phd");
         DBHelper.save(course);
-        Lesson lesson = new Lesson("Hibernate", 1, course);
+        Instructor instructor = new Instructor("Mr Jones");
+        DBHelper.save(instructor);
+        Lesson lesson = new Lesson("Hibernate", 1, course, instructor);
         DBHelper.save(lesson);
         Student student = new Student("Harry", 40, 1, course);
         DBHelper.save(student);
